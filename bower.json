@@ -1,0 +1,14 @@
+{
+  "name": "Zeotap",
+  "description": "",
+  "main": "index.html",
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,50 @@
+<div>
+<div class="list-wrapper">
+  <h1>Search Advertisements</h1>
+  <div class="label">Enter any advertisment</div>
+  <div><input type="text" placeholder="Search for items" class="input" ng-model="vm.searchText" ng-model-options="{debounce: 10}" ng-change="vm.search()" /></div>
+  <ul class="suggestions-list">
+    <li ng-repeat="suggestion in vm.suggestions track by $index" ng-class="{active : vm.selectedIndex === $index}" ng-click="vm.assignValueAndHide($index)">{{suggestion.name}}</li>
+  </ul>
+</div>
+
+<div ng-show="vm.selectedItem != null">
+  <table>
+    <tr>
+      <th>Brand Name</th>
+      <th>First Campaign Name</th>
+      <th>Count</th>
+    </tr>
+    <tr>
+      <td>{{vm.selectedItem.name}}</td>
+      <td>{{vm.selectedItem.campaigns[0].name}}</td>
+      <td>{{vm.selectedItem.campaigns.length}}</td>
+    </tr>
+  </table>
+</div>
+
+</div>
+
+<style>
+  .suggestions-list{
+    height: 200px;
+    overflow: auto;
+    width: 120px;
+    border: 1px solid black;
+  }
+  .suggestions-list li {
+    cursor: pointer;
+    list-style: none;
+  }
+  .search-box {
+    padding: 20px;
+    margin:20px;
+  }
+  table{
+    border: 1px solid;
+  }
+  td, th {
+    border: 1px solid black;
+  }
+
+</style>
